@@ -1,0 +1,2 @@
+webserver_image: tahabozoyuk/webserver
+resultserver_image: tahabozoyuk/resultserver

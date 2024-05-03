@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver-deployment
+  labels:
+    app: phonebook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phonebook
+  template:
+    metadata:
+      labels:
+        app: phonebook
+    spec:
+      containers:
+      - name: webserver
+        image: {{ .Values.webserver_image }}
+        env:
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: servers-secret
+              key: password
+        envFrom:
+        - configMapRef:
+            name: servers-cm    
+        ports:
+        - containerPort: 80
