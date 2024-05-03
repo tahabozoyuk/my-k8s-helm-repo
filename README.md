@@ -1,13 +1,24 @@
     ```bash
-    # my-k8s-helm-github-repo
+ # my-k8s-helm-github-repo
 
-    helm repo add --username <githubusername> --password <githubtoken> my-k8s-helm-repo https://raw.githubusercontent.com/tahabozoyuk/my-k8s-helm-repo/main
+# Install Helm
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+# Check Helm version
+helm version
 
-    helm install phonebook-app my-k8s-helm-repo/phonebook-chart   
+# Add and authenticate the GitHub repository
+helm repo add --username <githubusername> --password <githubtoken> my-k8s-helm-repo https://raw.githubusercontent.com/tahabozoyuk/my-k8s-helm-repo/main
 
-    - To use own images execute as below
+# Install the phonebook application
+helm install phonebook-app my-k8s-helm-repo/phonebook-chart   
 
-    helm install phonebook-app my-k8s-helm-repo/phonebook-chart --set webserver_image=<image-name> --set resultserver_image=<image-name>
+# To use custom images, execute as below
+
+helm install phonebook-app my-k8s-helm-repo/phonebook-chart --set webserver_image=<image-name> --set resultserver_image=<image-name>
+
+# Uninstall the phonebook application
+helm uninstall phonebook-app 
+
 
     ```
 # Project-206: Microservice Architecture for Phonebook Web Application (Python Flask) with MySQL using Kubernetes.
