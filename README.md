@@ -1,7 +1,7 @@
 ```bash
 # my-k8s-helm-github-repo
 
-helm repo add phonebook-repo https://raw.githubusercontent.com/tahabozoyuk/my-k8s-helm-repo/main
+helm repo add my-k8s-helm-repo https://raw.githubusercontent.com/tahabozoyuk/my-k8s-helm-repo/main
 
 helm install phonebook-app my-k8s-helm-repo/phonebook-chart  
 
