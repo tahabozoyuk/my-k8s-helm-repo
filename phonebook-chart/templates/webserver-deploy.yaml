@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: webserver
-        image: {{ .Values.webserver_image }}
+        image: tahabozoyuk/pb-webserver 
         env:
         - name: MYSQL_PASSWORD
           valueFrom:

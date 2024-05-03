@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: resultserver
-        image: {{ .Values.resultserver_image }}
+        image: tahabozoyuk/pb-result
         env:
         - name: MYSQL_PASSWORD
           valueFrom:
